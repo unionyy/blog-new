@@ -6,6 +6,8 @@ plugins:
 collections:
   authors:
     output: true
+  projects:
+    output: true
 
 defaults:
   - scope:

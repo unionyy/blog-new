@@ -1,5 +1,21 @@
 ---
 layout: default
-title: Home
+title: Union Kim
 ---
-<h1>{{ "Hello World!" | downcase }}</h1>
+<h1>Union Kim</h1>
+
+<ul>
+  {% for project in site.projects %}
+    <li>
+      <h2>{{ project.name }}</h2>
+      <h3>{{ project.description }}</h3>
+      <p>{{ project.content | markdownify }}</p>
+      <li>
+        {% assign stack = project.stack | split:','%}
+        {% for tech in stack %}
+          <span>{{tech}}</span>
+        {% endfor %}
+      </li>
+    </li>
+  {% endfor %}
+</ul>
